@@ -8,9 +8,9 @@
     <input type="password" id="password" name="password" class="input-field" placeholder="Entrez votre mot de passe"
         #passwordInput="ngModel" [(ngModel)]="password" required>
 </div>
-<button type="submit" class="button" (click)="onLogin(emailInput.value, passwordInput.value)">Se connecter</button>
 
 <div>
+    <button type="submit" class="button" (click)="onLogin(emailInput.value, passwordInput.value)">Se connecter</button>
     <button class="secondary-button" routerLink="/inscription" routerLinkActive="activebutton">Pas encore inscrit?
         Cliquez ici</button>
 </div>

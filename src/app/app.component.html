@@ -10,13 +10,13 @@
 <body>
   <header class="header">
     <h1>Projet CGI</h1>
-    <nav class="nav">
+    <!-- <nav class="nav">
       <button routerLink="/inscription" routerLinkActive="activebutton">Inscription</button>
       <button routerLink="/auth" routerLinkActive="activebutton">Connexion</button>
-      <button routerLink="/gestion" routerLinkActive="activebutton">Gestion des
+      <button *ngIf="isAuthenticated" routerLink="/gestion" routerLinkActive="activebutton">Gestion des
         utilisateurs</button>
-      <button routerLink="/details" routerLinkActive="activebutton">Détails</button>
-    </nav>
+      <button *ngIf="isAuthenticated" routerLink="/details" routerLinkActive="activebutton">Détails</button>
+    </nav> -->
   </header>
   <hr>
   <router-outlet></router-outlet>
