@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 export class GestionComponent implements OnInit {
   token: string | null = '';
   users: any[] = [];
+  pages: number[] = [1, 2];
+  page = 1;
 
   ngOnInit(): void {
     this.token = localStorage.getItem('token');
@@ -24,18 +26,24 @@ export class GestionComponent implements OnInit {
   }
 
   fetchUsers(): void {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://reqres.in/api/users', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send();
-    xhr.onload = () => {
+    this.pages.forEach(pageNumber => {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', `https://reqres.in/api/users?page=${pageNumber}`, true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send();
+      xhr.onload = () => {
       if (xhr.status === 200) {
         const response = JSON.parse(xhr.responseText);
-        this.users = response.data;
+        this.users = this.users.concat(response.data);
         console.log(this.users);
       } else {
-        alert('Failed to get users.');
+        alert(`Failed to get users for page ${pageNumber}.`);
       }
-    }
+      };
+    });
+  }
+
+  onEdit(id: number): void {
+    window.location.href = `/details/${id}`;
   }
 }

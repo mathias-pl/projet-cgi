@@ -5,10 +5,20 @@
 </div>
 
 <div>
-    <h3>Users List:</h3>
-    <!-- <menu> -->
-    <a *ngFor="let user of users">{{ user.id }}
-        - {{ user.email }} - {{ user.first_name }} {{ user.last_name }}
-    </a>
-    <!-- </menu> -->
+    <h2>Users List</h2>
+    <div style="text-align: center;">
+        <table style="margin: 0 auto; font-size: larger;">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.email }}</td>
+                    <button class="button" (click)="onEdit(user.id)">Edit</button>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
