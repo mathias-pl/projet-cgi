@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { every } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -18,13 +17,13 @@ export class AuthComponent {
     return re.test(email);
   }
 
-  validatePassword(password: string): boolean {
-    const hasLength = password.length >= 8;
-    const hasUpperCase = /[A-Z]/.test(password);
-    const hasLowerCase = /[a-z]/.test(password);
-    const hasNumber = /\d/.test(password);
-    return hasLength && hasUpperCase && hasLowerCase && hasNumber;
-  }
+  // validatePassword(password: string): boolean {
+  //   const hasLength = password.length >= 8;
+  //   const hasUpperCase = /[A-Z]/.test(password);
+  //   const hasLowerCase = /[a-z]/.test(password);
+  //   const hasNumber = /\d/.test(password);
+  //   return hasLength && hasUpperCase && hasLowerCase && hasNumber;
+  // }
 
   onLogin(email: string, password: string): void {
     if (!this.validateEmail(email)) {

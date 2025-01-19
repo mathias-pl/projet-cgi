@@ -1,4 +1,14 @@
 <div>
     <p>Token Value: {{ token }}</p>
     <button class="button" (click)="onLogout()">Logout</button>
+    <button class="secondary-button" (click)="fetchUsers()">Fetch Users</button>
+</div>
+
+<div>
+    <h3>Users List:</h3>
+    <!-- <menu> -->
+    <a *ngFor="let user of users">{{ user.id }}
+        - {{ user.email }} - {{ user.first_name }} {{ user.last_name }}
+    </a>
+    <!-- </menu> -->
 </div>
