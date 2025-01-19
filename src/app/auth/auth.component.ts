@@ -17,23 +17,12 @@ export class AuthComponent {
     return re.test(email);
   }
 
-  // validatePassword(password: string): boolean {
-  //   const hasLength = password.length >= 8;
-  //   const hasUpperCase = /[A-Z]/.test(password);
-  //   const hasLowerCase = /[a-z]/.test(password);
-  //   const hasNumber = /\d/.test(password);
-  //   return hasLength && hasUpperCase && hasLowerCase && hasNumber;
-  // }
-
   onLogin(email: string, password: string): void {
     if (!this.validateEmail(email)) {
       alert('Please enter a valid email address.');
       return;
     }
-    // if (!this.validatePassword(password)) {
-    //   alert('Please enter a valid password.');
-    //   return;
-    // }
+
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://reqres.in/api/login', true);
     xhr.setRequestHeader('Content-Type', 'application/json');

@@ -1,23 +1,29 @@
 <form class="form-container" id="registrationForm">
     <div class="form-group">
         <label for="courriel">Courriel</label>
-        <input type="courriel" id="courriel" name="courriel" class="input-field" placeholder="Entrez votre courriel"
-            required>
+        <small>Doit suivre le format suivant: xxx&#64;xxx.xxx</small>
+        <input type="email" id="email" name="email" class="input-field" placeholder="Entrez votre courriel" required
+            [(ngModel)]="email" #emailInput="ngModel">
     </div>
     <div class="form-group">
         <label for="password">Mot de passe</label>
+        <small>Doit contenir au moins 8 charactères, dont une lettre minuscule, une lettre majuscule et un
+            chiffre</small>
         <input type="password" id="password" name="password" class="input-field" placeholder="Entrez votre mot de passe"
-            required>
+            required [(ngModel)]="password" #passwordInput="ngModel">
     </div>
     <div class="form-group">
         <label for="confirmPassword">Confirmer le mot de passe</label>
+        <small>Les mots de passe doivent être identiques</small>
         <input type="password" id="confirmPassword" name="confirmPassword" class="input-field"
-            placeholder="Confirmez votre mot de passe" required>
+            placeholder="Confirmez votre mot de passe" required [(ngModel)]="confirmPassword"
+            #confirmPasswordInput="ngModel">
     </div>
 </form>
 
 <div>
-    <button type="submit" class="button">S'inscrire</button>
-    <button class="secondary-button" routerLink="/auth" routerLinkActive="activebutton">Déjà inscrit? Cliquez
+    <button type="submit" class="button" style="background-color: #eb5e28;"
+        (click)="onRegister(emailInput.value, passwordInput.value, confirmPasswordInput.value)">S'inscrire</button>
+    <button class="button" routerLink="/auth" routerLinkActive="activebutton">Déjà inscrit? Cliquez
         ici</button>
 </div>
