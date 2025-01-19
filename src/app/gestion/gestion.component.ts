@@ -47,7 +47,7 @@ export class GestionComponent implements OnInit {
     });
   }
 
-  onEdit(id: number): void {
+  onDetails(id: number): void {
     window.location.href = `/details/${id}`;
   }
 

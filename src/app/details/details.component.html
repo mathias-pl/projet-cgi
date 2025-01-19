@@ -1,1 +1,25 @@
-<p>details works!</p>
+<div>
+    <p>Token Value: {{ token }}</p>
+    <button class="button" (click)="onLogout()" style="background-color: #eb5e28;">Se déconnecter</button>
+    <button class="secondary-button" (click)="onManage()">Retour à la liste</button>
+</div>
+
+<div style="margin-top: 15px;">
+    <div style="text-align: center;">
+        <div style="margin: 10px 0;">
+            <img src="{{ user.avatar }}" alt="User Image" style="width: 240px; height: 240px; border-radius: 120px;">
+        </div>
+        <div style="margin: 10px 0;">
+            <strong>ID:</strong> {{ user.id }}
+        </div>
+        <div style="margin: 10px 0;">
+            <strong>Courriel:</strong> {{ user.email }}
+        </div>
+        <div style="margin: 10px 0;">
+            <strong>Prénom:</strong> {{ user.first_name }}
+        </div>
+        <div style="margin: 10px 0;">
+            <strong>Nom:</strong> {{ user.last_name }}
+        </div>
+    </div>
+</div>
