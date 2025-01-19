@@ -17,6 +17,7 @@ hr {
 }
 
 button {
+    background: #403d39;
     color: white;
     border-radius: 16px;
     display: inline-block;
@@ -38,10 +39,6 @@ button:hover {
     background: #eb5e28;
 }
 
-.button {
-    background: #403d39;
-}
-
 .secondary-button {
     background: #ccc5b9;
 }
@@ -57,7 +54,7 @@ button:hover {
     margin: 10px;
 }
 
-.input-field {
+input {
     padding: 10px;
     margin: 5px;
     border-radius: 17px;
@@ -66,4 +63,13 @@ button:hover {
     width: 80%;
     max-width: 600px;
     align-self: center;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #eb5e28;
+}
+
+input:hover {
+    border: 1px solid #eb5e28;
 }
