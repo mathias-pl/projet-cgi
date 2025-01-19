@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
-  imports: [],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './inscription.component.html',
-  styleUrl: './inscription.component.css'
+  styleUrl: '../app.component.css'
 })
 export class InscriptionComponent {
 

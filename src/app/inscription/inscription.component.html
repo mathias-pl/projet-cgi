@@ -1,49 +1,22 @@
-<div class="form-container">
-    <form>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-</div>
+<form class="form-container" id="registrationForm">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="input-field" placeholder="Entrez votre email" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" class="input-field" placeholder="Entrez votre mot de passe"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="confirmPassword">Confirmer le mot de passe</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="input-field"
+            placeholder="Confirmez votre mot de passe" required>
+    </div>
+    <button type="submit" class="button">Submit</button>
+</form>
 
 <div>
-    <a class="button" routerLink="/auth" routerLinkActive="activebutton">Déjà inscrit? Cliquez ici</a>
+    <button class="secondary-button" routerLink="/auth" routerLinkActive="activebutton">Déjà inscrit? Cliquez
+        ici</button>
 </div>
-
-<script>
-    document.getElementById('registrationForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        const data = {
-            name: name,
-            email: email,
-            password: password
-        };
-
-        fetch('https://reqres.in/api/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-    });
-</script>

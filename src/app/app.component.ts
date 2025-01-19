@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLinkActive, RouterOutlet } from '@angular/router';
-import { RouterLink } from '@angular/router';
+import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',

@@ -1,4 +1,6 @@
 body {
+    margin: 0px;
+    padding: 0px;
     background-color: #e9ecef;
     color: #403d39;
     text-align: center;
@@ -14,8 +16,7 @@ hr {
     border: 1px solid #dee2e6;
 }
 
-.button {
-    background: #403d39;
+button {
     color: white;
     border-radius: 16px;
     display: inline-block;
@@ -23,25 +24,46 @@ hr {
     font-weight: bold;
     padding: 6px 24px;
     margin: 10px;
-    text-decoration: none; /* Added to remove underline */
+    border: none;
+    text-decoration: none; /* No underline */
 }
 
-.button:hover {
-    background: #252422;
+button:hover {
+    /* background: #252422; */
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
 }
 
 .activebutton {
     background: #eb5e28;
-    transform: scale(1.1);
 }
 
-login-container {
-    display: flex;
-    justify-content: center;
+.button {
+    background: #403d39;
+}
+
+.secondary-button {
+    background: #ccc5b9;
+}
+
+.form-container {
+    width: 100%;
     align-items: center;
-    height: 100vh;
 }
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
 
+.input-field {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 17px;
+    border: 1px solid #ccc5b9;
+    color: #252422;
+    width: 80%;
+    max-width: 600px;
+    align-self: center;
+}
